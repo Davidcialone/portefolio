@@ -15,12 +15,13 @@ export function NavbarSite() {
             <Nav.Link href="https://www.linkedin.com/in/david-cialone-6a5a627b/" target="_blank" rel="noopener noreferrer">
               Profil LinkedIn
             </Nav.Link>
+            <Nav.Link as={Link} to="/projects-carousel">Projets</Nav.Link>
+            <Nav.Link as={Link} to="/hobbies">Mes passions</Nav.Link>
             <NavDropdown title="Projets" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/project1">Projet 1</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/project2">Projet 2</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/project3">Projet 3</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/hobbies">Mes passions</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

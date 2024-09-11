@@ -33,7 +33,7 @@ function Presentation() {
 
       <h3>Contact</h3>
       <p>
-        N'hésitez pas à me contacter pour discuter de vos projets ou pour toute question. Vous pouvez me trouver sur <a href="https://www.linkedin.com/in/david-cialone" target="_blank" rel="noopener noreferrer">LinkedIn</a> ou me joindre par <a href="mailto:your.email@example.com">email</a>.
+        N'hésitez pas à me contacter pour discuter de vos projets ou pour toute question. Vous pouvez me trouver sur <a href="https://www.linkedin.com/in/david-cialone-6a5a627b/" target="_blank" rel="noopener noreferrer">LinkedIn</a> ou me joindre par <a href="mailto:cialonedavid@gmail.com">email</a>.
       </p>
 
       <p>Merci de visiter mon portfolio, et j'espère avoir l'occasion de collaborer avec vous bientôt !</p>

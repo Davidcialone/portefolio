@@ -6,7 +6,7 @@ function BrandExample() {
     <>
         <Navbar className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img
               alt=""
               src="images\20220423_150502-PhotoRoom (1).jpg"
