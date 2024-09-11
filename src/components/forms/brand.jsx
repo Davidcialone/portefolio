@@ -9,7 +9,7 @@ function BrandExample() {
           <Navbar.Brand href="#home">
             <img
               alt=""
-              src="public\images\20220423_150502-PhotoRoom (1).jpg"
+              src="images\20220423_150502-PhotoRoom (1).jpg"
               width="30"
               height="30"
               className="d-inline-block align-top"
