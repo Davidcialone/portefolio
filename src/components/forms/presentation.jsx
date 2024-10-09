@@ -18,10 +18,10 @@ function Presentation() {
       </p>
 
       <h3 style={{ margin: '2rem' }}>Mes Compétences</h3>
-      <div style={{ display: 'flex', justifyContent: 'space-around', margin: '1rem' }}>
+      <div className="skills" style={{ display: 'flex', justifyContent: 'space-around', margin: '1rem' }}>
         <div style={{ textAlign: 'center', border: '1px solid #ccc', padding: '1rem', borderRadius: '1rem', width: '32%', height: 'auto', overflow: 'hidden' }}>
           <img 
-            src="public\images\management.png" 
+            src="images\management.png" 
             alt="Management" 
             style={{ width: '15rem', height: '15rem', objectFit: 'cover' }} 
           />
@@ -36,7 +36,7 @@ function Presentation() {
         </div>
         <div style={{ textAlign: 'center', border: '1px solid #ccc', padding: '1rem', borderRadius: '8px', width: '32%', height: 'auto', overflow: 'hidden' }}>
           <img 
-            src="public\images\client.png" 
+            src="images\client.png" 
             alt="Client" 
             style={{ width: '15rem', height: '15rem', objectFit: 'cover' }} 
           />
@@ -50,7 +50,7 @@ function Presentation() {
         </div>
         <div style={{ textAlign: 'center', border: '1px solid #ccc', padding: '1rem', borderRadius: '8px', width: '32%', height: 'auto', overflow: 'hidden' }}>
           <img 
-            src="public\images\dev.png" 
+            src="images\dev.png" 
             alt="Développement" 
             style={{ width: '15rem', height: '15rem', objectFit: 'cover' }}  
           />

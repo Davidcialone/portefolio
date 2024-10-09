@@ -11,7 +11,6 @@ export function NavbarSite() {
       expand="lg" 
       style={{ 
         background: navbarBackground, 
-        
         border: '2px solid #ffffff', 
         borderRadius: '8px' 
       }} 

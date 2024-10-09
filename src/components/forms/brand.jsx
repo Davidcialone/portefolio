@@ -8,7 +8,7 @@ function BrandExample() {
         <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center' }}>
           <img
             alt=""
-            src="public/images/profil.png"
+            src="images/profil.png"
             width="40%" // Ajustez la largeur selon vos besoins
             height="40%" // Ajustez la hauteur selon vos besoins
             style={{ margin: '1rem' }} // Espace entre l'image et le texte
