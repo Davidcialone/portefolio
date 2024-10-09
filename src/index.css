@@ -66,3 +66,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* styles.css ou un fichier CSS spécifique */
+.nav-text {
+  font-weight: bold; /* Met le texte en gras */
+  font-size: 1.5rem; /* Taille de police uniforme */
+  color: black; /* Couleur du texte */
+  margin: 0; /* Supprime les marges par défaut */
+}
+.navbar {
+  padding-top: 0; /* Supprime le padding supérieur */
+  padding-bottom: 0; /* Supprime le padding inférieur */
+}

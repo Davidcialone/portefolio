@@ -3,22 +3,23 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function BrandExample() {
   return (
-    <>
-        <Navbar className="bg-body-tertiary">
-        <Container>
-          <Navbar.Brand href="/">
-            <img
-              alt=""
-              src="images\20220423_150502-PhotoRoom (1).jpg"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
-           Mon portefolio
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
-    </>
+    <Navbar>
+      <Container style={{ display: 'flex', alignItems: 'center', padding: '0' }}>
+        <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center' }}>
+          <img
+            alt=""
+            src="public/images/profil.png"
+            width="40%" // Ajustez la largeur selon vos besoins
+            height="40%" // Ajustez la hauteur selon vos besoins
+            style={{ margin: '1rem' }} // Espace entre l'image et le texte
+          />
+          <div style={{ textAlign: 'center' }}>
+            <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>DAVID</span><br />
+            <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>CIALONE</span>
+          </div>
+        </Navbar.Brand>
+      </Container>
+    </Navbar>
   );
 }
 

@@ -14,8 +14,7 @@ function App() {
     return (
         <Router>
             <div>
-                <BrandExample className="brand"/>
-                <h1>DAVID CIALONE</h1>
+                
                 <NavbarSite/>
                 <Routes>
                     <Route path="/" element={<Presentation />} />
