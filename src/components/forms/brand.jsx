@@ -9,8 +9,8 @@ function BrandExample() {
           <img
             alt=""
             src="images/profil.png"
-            width="40%" // Ajustez la largeur selon vos besoins
-            height="40%" // Ajustez la hauteur selon vos besoins
+            width="50%" // Ajustez la largeur selon vos besoins
+            height="50%" // Ajustez la hauteur selon vos besoins
             style={{ margin: '1rem' }} // Espace entre l'image et le texte
           />
           <div style={{ textAlign: 'center' }}>

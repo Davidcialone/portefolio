@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
-import BrandExample from './brand';
+
 
 const navbarBackground = 'linear-gradient(to right, #A0C1DB 70%, #C2D7E8)'; // Dégradé similaire
 
@@ -15,8 +15,7 @@ export function NavbarSite() {
         borderRadius: '8px' 
       }} 
     >
-      <BrandExample/>
-      <Container>
+           <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

@@ -1,0 +1,9 @@
+.description-container{
+    display: flex;
+}
+
+.description-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
