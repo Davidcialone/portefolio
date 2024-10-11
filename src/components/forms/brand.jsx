@@ -5,7 +5,7 @@ export function MyBrand() {
   return (
     <Navbar>
       <Container style={{ display: 'flex', alignItems: 'center', padding: '0' }}>
-        <Navbar.Brand href="/" style={{ backgroundColor:'#A1C3DE', backgroundColor: 'transparent',display: 'flex',flexDirection: 'column', alignItems: 'center' }}>
+      <Navbar.Brand href="/" style={{ backgroundColor: '#A1C3DE', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <img
             alt=""
             src="images/profil.png"

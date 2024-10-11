@@ -3,11 +3,12 @@ import React from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
+import { NavbarSite } from './navbar';
 import { Box, IconButton } from '@chakra-ui/react';
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
-import {Project1} from './project1';
-import {Project2} from './project2';
-import {Project3} from './project3';
+import { Project1 } from './project1';
+import { Project2 } from './project2';
+import { Project3 } from './project3';
 
 // Custom arrow components
 const NextArrow = ({ onClick }) => {
@@ -53,20 +54,23 @@ export function ProjectsCarousel() {
   };
 
   return (
-    <Box width="full" padding={4} position="relative" >
-      <Slider {...settings}>
-        <Box padding={4}>
-          <Project1 />
-        </Box>
-        <Box padding={4}>
-          <Project2 />
-        </Box>
-        <Box padding={4}>
-          <Project3 />
-        </Box>
-      </Slider>
+    <Box width="full"  display="flex" flexDirection="column" position="relative">
+      <NavbarSite />
+      <Box flex="1" overflow="hidden"> {/* Assurez-vous que le Slider occupe l'espace restant */}
+        <Slider {...settings}>
+          <Box padding={4}>
+            <Project1 />
+          </Box>
+          <Box padding={4}>
+            <Project2 />
+          </Box>
+          <Box padding={4}>
+            <Project3 />
+          </Box>
+        </Slider>
+      </Box>
     </Box>
   );
 }
 
-export default ProjectsCarousel;
+

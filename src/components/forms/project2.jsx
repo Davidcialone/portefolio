@@ -1,4 +1,4 @@
-// src/components/forms/Project2.js
+// src/components/forms/Project3.js
 import React from 'react';
 import {
   Box,
@@ -9,45 +9,56 @@ import {
   Card,
   CardHeader,
   CardBody,
-  SimpleGrid, // Utilisation de SimpleGrid pour organiser la disposition en colonnes
-  useBreakpointValue
+  SimpleGrid,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 export function Project2() {
   // Utiliser un breakpoint pour changer la disposition selon la taille de l'écran
-  const columns = useBreakpointValue({ base: 1, md: 2 }); 
+  const flexDirection = useBreakpointValue({
+    base: 'column', // Pour les écrans inférieurs à 1200px
+    md: 'column',
+    lg: 'column', 
+    xl: 'row'       // Pour les écrans supérieurs à 1200px
+  }); 
 
   return (
     <Card>
       <CardHeader>
-        <Heading size='md'>On The Road Again</Heading>
+        <Heading size='md'>Projet 2</Heading>
       </CardHeader>
 
       <CardBody>
         {/* Utilisation de SimpleGrid pour créer deux colonnes sur les grands écrans */}
-        <SimpleGrid columns={columns} spacing={10} alignItems="center">
+        <Box display="flex" flexDirection={flexDirection} alignItems="center" spacing={10}>
           {/* Colonne de la vidéo */}
-          <Box>
-            <video
-              src="/portefolio/images/video New York.mp4" // Assurez-vous que le chemin de la vidéo est correct
-              controls 
-              autoPlay
-              loop
-              muted
-              style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }}
-            >
-              Votre navigateur ne supporte pas les vidéos.
-            </video>
-          </Box>
-
-          {/* Colonne de texte */}
-          <Box>
-            <Stack divider={<StackDivider />} spacing='4'>
-              <Box>
-                <Heading size='xs'>
-                  L'application pour revivre ses voyages
-                </Heading>
-              </Box>
+          <Box flex="1">
+          <img
+                  src="portefolio/images/Rome.png"
+                  alt="Projet 3"
+                  className="project-image"
+                  style={{
+                  maxWidth: '70%',  // Limite la largeur de l'image à 80% de son conteneur
+                  height: 'auto',    // Garde le ratio de l'image
+                  margin: '0 auto',  // Centre l'image horizontalement
+                }}
+              />
+            </Box>
+  
+            {/* Colonne de texte */}
+            <Box flex="1">
+              <Stack divider={<StackDivider />} spacing='4'>
+                <Box padding='2rem'>
+                  <Heading size='xs' textTransform='uppercase'>
+                    Stack technique
+                  </Heading>
+                  <Text pt='2' fontSize='sm'>
+                    Front :
+                  </Text>
+                  <Text pt='2' fontSize='sm'>
+                    Back :
+                  </Text>
+                </Box>
 
               <Box>
                 <Heading size='xs' textTransform='uppercase'>
@@ -68,7 +79,7 @@ export function Project2() {
               </Box>
             </Stack>
           </Box>
-        </SimpleGrid>
+        </Box>
       </CardBody>
     </Card>
   );

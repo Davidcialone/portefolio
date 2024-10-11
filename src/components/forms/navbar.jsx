@@ -56,6 +56,9 @@ export function NavbarSite() {
               }}
             >
               {/* Remplacez les boutons par des liens */}
+              <Link to="/">
+                <Button variant="ghost">Accueil</Button>
+              </Link>
               <Link to="/projects">
                 <Button variant="ghost">Projets</Button>
               </Link>

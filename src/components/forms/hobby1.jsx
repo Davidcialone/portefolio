@@ -12,7 +12,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 
-export function Project1() {
+export function Hobby1() {
   // Utiliser un breakpoint pour changer la disposition selon la taille de l'écran
   const flexDirection = useBreakpointValue({
     base: 'column', // Pour les écrans inférieurs à 1200px
@@ -24,9 +24,9 @@ export function Project1() {
   return (
     <Card>
       <CardHeader>
-        <Heading size='md'>On The Road Again</Heading>
+        <Heading size='md'>Le sport</Heading>
         <Text pt='2' fontSize='md'>
-          L'application pour revivre ses voyages
+         Un esprit sain dans un corps sain
         </Text>
       </CardHeader>
 

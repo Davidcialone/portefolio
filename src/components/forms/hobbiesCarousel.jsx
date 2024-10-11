@@ -1,28 +1,67 @@
-import React, { Component } from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // styles de base du carousel
-import "../../App.css"
-import { Carousel } from 'react-responsive-carousel';
+// src/components/forms/ProjectsCarousel.js
+import React from 'react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
+import { NavbarSite } from './navbar';
+import { Box, IconButton } from '@chakra-ui/react';
+import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
+import { Hobby1 } from './hobby1'; // Importation du hobby
 
-export class HobbiesCarousel extends Component {
-    render() {
-        return (
-            <div className="hobbies-carousel">
-                <h2>Mes Passions</h2>
-                <Carousel showThumbs={true} infiniteLoop={true} useKeyboardArrows={true} autoPlay>
-                    <div>
-                        <img src="https://fr.web.img4.acsta.net/pictures/24/01/26/10/18/5392835.jpg" alt="Slide 1" className="carousel-image" />
-                        <p className="legend">Legend 1</p>
-                    </div>
-                    <div>
-                        <img src="https://www.fredzone.org/wp-content/uploads/2021/10/dune_scenario_dos.jpg" alt="Slide 2" className="carousel-image" />
-                        <p className="legend">Legend 2</p>
-                    </div>
-                    <div>
-                        <img src="https://www.globaltimes.cn/Portals/0/attachment/2021/2021-10-19/70f03309-e25a-4393-8ea5-1acbd11d1282.jpeg" alt="Slide 3" className="carousel-image" />
-                        <p className="legend">Legend 3</p>
-                    </div>
-                </Carousel>
-            </div>
-        );
-    }
+// Custom arrow components
+const NextArrow = ({ onClick }) => {
+  return (
+    <IconButton
+      icon={<ArrowForwardIcon />}
+      position="absolute"
+      top="50%"
+      right="10px"
+      transform="translate(0, -50%)"
+      zIndex={1}
+      onClick={onClick}
+      aria-label="Next Slide"
+    />
+  );
+};
+
+const PrevArrow = ({ onClick }) => {
+  return (
+    <IconButton
+      icon={<ArrowBackIcon />}
+      position="absolute"
+      top="50%"
+      left="10px"
+      transform="translate(0, -50%)"
+      zIndex={1}
+      onClick={onClick}
+      aria-label="Previous Slide"
+    />
+  );
+};
+
+export function HobbiesCarousel() {
+  const settings = {
+    dots: true, // Affiche les points en bas
+    infinite: false, // Désactiver le carousel infini si vous ne souhaitez pas répéter les éléments
+    speed: 500, // Vitesse de transition
+    slidesToShow: 1, // Nombre d'éléments à afficher
+    slidesToScroll: 1, // Nombre d'éléments à faire défiler
+    arrows: true, // Afficher les flèches
+    nextArrow: <NextArrow />, // Flèche suivante personnalisée
+    prevArrow: <PrevArrow />, // Flèche précédente personnalisée
+  };
+
+  return (
+    <Box width="full" display="flex" flexDirection="column" position="relative">
+      <NavbarSite />
+      <Box flex="1" overflow="hidden">
+        {/* Le slider avec seulement un élément */}
+        <Slider {...settings}>
+          <Box padding={4}>
+            <Hobby1 /> {/* N'affiche qu'une seule fois le Hobby1 */}
+          </Box>
+        </Slider>
+      </Box>
+    </Box>
+  );
 }
