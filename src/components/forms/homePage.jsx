@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavbarSite } from './navbar';
-import Description from './description';
-import Skills from './skills';
-import MyBrand from './brand';
+import {Description} from './description';
+import {Skills} from './skills';
+import {MyBrand} from './brand';
 import { Contact } from './contact';
 import { Grid, GridItem, Box, Heading, Stack } from '@chakra-ui/react';
 

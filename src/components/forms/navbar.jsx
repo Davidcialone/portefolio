@@ -14,8 +14,6 @@ import {
   useColorModeValue 
 } from '@chakra-ui/react'; // Ensure you're importing all Chakra components
 import { AiOutlineMenu } from 'react-icons/ai'; // Import necessary icon
-import MyBrand from './brand';
-
 
 export function NavbarSite() {
   const bg = useColorModeValue("white", "gray.800");
@@ -41,7 +39,6 @@ export function NavbarSite() {
               display="flex"
               alignItems="center"
             >
-             
               <VisuallyHidden>Choc</VisuallyHidden>
             </chakra.a>
             <chakra.h1 fontSize="xl" fontWeight="medium" ml="2">
@@ -58,15 +55,21 @@ export function NavbarSite() {
                 md: "inline-flex",
               }}
             >
-              <Button variant="ghost">Projets</Button>
-              <Button variant="ghost">Passions</Button>
-              <Button variant="ghost">Linkedin</Button>
-              <Button variant="ghost">Contact</Button>
+              {/* Remplacez les boutons par des liens */}
+              <Link to="/projects">
+                <Button variant="ghost">Projets</Button>
+              </Link>
+              <Link to="/hobbies">
+                <Button variant="ghost">Passions</Button>
+              </Link>
+              <Link to="https://www.linkedin.com/in/votre-profil-linkedin" target="_blank">
+                <Button variant="ghost">Linkedin</Button>
+              </Link>
+              <Link to="/contact">
+                <Button variant="ghost">Contact</Button>
+              </Link>
             </HStack>
-            <Button colorScheme="brand" size="sm">
-              Get Started
-            </Button>
-            <Box
+              <Box
               display={{
                 base: "inline-flex",
                 md: "none",
@@ -108,26 +111,24 @@ export function NavbarSite() {
                   onClick={mobileNav.onClose}
                 />
   
-                <Button w="full" variant="ghost">
-                  Features
-                </Button>
-                <Button w="full" variant="ghost">
-                  Pricing
-                </Button>
-                <Button w="full" variant="ghost">
-                  Blog
-                </Button>
-                <Button w="full" variant="ghost">
-                  Company
-                </Button>
-                <Button w="full" variant="ghost">
-                  Sign in
-                </Button>
+                {/* Utilisez les liens dans le menu mobile également */}
+                <Link to="/projects">
+                  <Button w="full" variant="ghost">Projets</Button>
+                </Link>
+                <Link to="/hobbies">
+                  <Button w="full" variant="ghost">Passions</Button>
+                </Link>
+                <Link to="https://www.linkedin.com/in/votre-profil-linkedin" target="_blank">
+                  <Button w="full" variant="ghost">Linkedin</Button>
+                </Link>
+                <Link to="/contact">
+                  <Button w="full" variant="ghost">Contact</Button>
+                </Link>
               </VStack>
             </Box>
           </HStack>
         </Flex>
       </chakra.header>
     </React.Fragment>
-  );
+  )
 };

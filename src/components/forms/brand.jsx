@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 
-function MyBrand() {
+export function MyBrand() {
   return (
     <Navbar>
       <Container style={{ display: 'flex', alignItems: 'center', padding: '0' }}>
@@ -24,4 +24,3 @@ function MyBrand() {
   );
 }
 
-export default MyBrand;

@@ -78,18 +78,4 @@ button:focus-visible {
   padding-bottom: 0; /* Supprime le padding inférieur */
 }
 
-/* Media query pour les écrans plus petits que 1000px */
-@media screen and (max-width: 1000px) {
-  .skills {
-    flex-direction: column; /* Change à un layout vertical */
-    align-items: stretch; /* Étire les éléments pour remplir la largeur */
-  }
 
-  .skills > div {
-    width: 100% !important; /* Fait que chaque conteneur prenne la largeur complète */
-    margin-bottom: 1rem; /* Ajoute de l'espace entre les conteneurs */
-  }
-  .navbar.brand{
-justify-content: center !important;
-  }
-}

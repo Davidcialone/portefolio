@@ -11,7 +11,7 @@ import {
   SimpleGrid, // Importation du composant SimpleGrid
 } from "@chakra-ui/react"; // Importation des composants Chakra UI
 
-function Skills() {
+export function Skills() {
   return (
     <Box padding="4">
       <Heading as="h3" size="lg" textAlign="center" marginBottom="4">
@@ -127,4 +127,4 @@ function Skills() {
   );
 }
 
-export default Skills;
+

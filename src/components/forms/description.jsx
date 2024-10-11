@@ -1,7 +1,7 @@
 import React from "react";
 import '../../style/homePage.css'
 
-function Description() {
+export function Description() {
     return (
         <div className="description-container">
       
@@ -22,4 +22,3 @@ function Description() {
     )  
 }
 
-export default Description;

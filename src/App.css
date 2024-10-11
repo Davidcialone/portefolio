@@ -41,17 +41,3 @@
   color: #888;
 }
 
-/* Styles pour les images principales du carousel */
-.carousel-image {
-  width: 100%;
-  height: 80vh;
-  object-fit: cover;
-}
-
-/* Styles pour les images des vignettes (thumbnails) */
-.carousel .thumb img {
-  width: 100px;  /* Taille des vignettes */
-  height: 50px;  /* Hauteur des vignettes */
-  object-fit: cover;
-}
-/* styles.css ou un fichier CSS spécifique */
