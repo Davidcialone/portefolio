@@ -44,7 +44,7 @@ export function Project2() {
           {/* Colonne de la vidéo */}
           <Box flex="1">
           <img
-                  src="portefolio/images/workinprogress.jpg"
+                  src="/portefolio/images/workinprogress.jpg"
                   alt="Projet 3"
                   className="project-image"
                   style={{

@@ -28,7 +28,7 @@ export function Skills() {
             <Stack divider={<StackDivider />} spacing="4">
               <Box display="flex" flexDirection="column" alignItems="center">
                 <img
-                  src="images/management.png"
+                  src="/portefolio/images/management.png"
                   alt="Management"
                   style={{ width: '15rem', height: '15rem', objectFit: 'cover', borderRadius: '8px' }}
                 />
@@ -53,7 +53,7 @@ export function Skills() {
             <Stack divider={<StackDivider />} spacing="4">
               <Box display="flex" flexDirection="column" alignItems="center">
                 <img
-                  src="images/client.png"
+                  src="/portefolio/images/client.png"
                   alt="Client"
                   style={{ width: '15rem', height: '15rem', objectFit: 'cover', borderRadius: '8px' }}
                 />
@@ -78,7 +78,7 @@ export function Skills() {
             <Stack divider={<StackDivider />} spacing="4">
               <Box display="flex" flexDirection="column" alignItems="center">
                 <img
-                  src="images/dev.png"
+                  src="/portefolio/images/dev.png"
                   alt="Développement"
                   style={{ width: '15rem', height: '15rem', objectFit: 'cover', borderRadius: '8px' }}
                 />

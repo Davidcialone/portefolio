@@ -35,7 +35,7 @@ export function Hobby1() {
           {/* Colonne de l'image */}
           <Box flex="1" display="flex" justifyContent="center">
             <img 
-              src="portefolio/images/sports.jpg"
+              src="/portefolio/images/sports.jpg"
               alt="Projet 3"
               className="project-image"
               style={{

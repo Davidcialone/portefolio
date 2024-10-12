@@ -16,16 +16,15 @@ function App() {
         <ChakraProvider> 
             <Router>
             <div>
-                
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/portefolio" element={<HomePage />} />
-                    <Route path="/project1" element={<Project1 />} />
-                    <Route path="/project2" element={<Project2 />} />
-                    <Route path="/project3" element={<Project3 />} />
-                    <Route path="/projects" element={<ProjectsCarousel />} />
-                    <Route path="/hobbies" element={<HobbiesCarousel />} />
-                    <Route path="/contact" element={<Contact />} />
+                    {/* <Route path="/projects" element={<ProjectsCarousel />} /> */}
+                    <Route path="/portefolio/projects" element={<ProjectsCarousel />} />
+                    {/* <Route path="/hobbies" element={<HobbiesCarousel />} /> */}
+                    <Route path="/portefolio/hobbies" element={<HobbiesCarousel />} />
+                    {/* <Route path="/contact" element={<Contact />} /> */}
+                    <Route path="/portefolio/contact" element={<Contact />} />
                     {/* Ajoutez d'autres routes ici si nécessaire */}
                 </Routes>
             </div>

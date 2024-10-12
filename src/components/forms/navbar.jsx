@@ -59,16 +59,16 @@ export function NavbarSite() {
               <Link to="/">
                 <Button variant="ghost">Accueil</Button>
               </Link>
-              <Link to="/projects">
+              <Link to="/portefolio/projects">
                 <Button variant="ghost">Projets</Button>
               </Link>
-              <Link to="/hobbies">
+              <Link to="/portefolio/hobbies">
                 <Button variant="ghost">Passions</Button>
               </Link>
               <Link to="https://www.linkedin.com/in/votre-profil-linkedin" target="_blank">
                 <Button variant="ghost">Linkedin</Button>
               </Link>
-              <Link to="/contact">
+              <Link to="/portefolio/contact">
                 <Button variant="ghost">Contact</Button>
               </Link>
             </HStack>

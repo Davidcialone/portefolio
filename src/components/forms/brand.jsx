@@ -8,7 +8,7 @@ export function MyBrand() {
       <Navbar.Brand href="/" style={{ backgroundColor: '#A1C3DE', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <img
             alt=""
-            src="images/profil.png"
+            src="/portefolio/images/profil.png"
             width="80%" // Ajustez la largeur selon vos besoins
             height="80%" // Ajustez la hauteur selon vos besoins
             style={{ margin: '1rem' }} // Espace entre l'image et le texte
