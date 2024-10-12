@@ -5,9 +5,11 @@ import {Project2} from './components/forms/project2';
 import {Project3} from './components/forms/project3';
 import {ProjectsCarousel} from './components/forms/projectsCarousel';
 import { HobbiesCarousel } from './components/forms/hobbiesCarousel';
+import {Contact} from './components/forms/contact';
 import { ChakraProvider } from '@chakra-ui/react'
 
 import './App.css';
+
 
 function App() {
     return (
@@ -23,6 +25,7 @@ function App() {
                     <Route path="/project3" element={<Project3 />} />
                     <Route path="/projects" element={<ProjectsCarousel />} />
                     <Route path="/hobbies" element={<HobbiesCarousel />} />
+                    <Route path="/contact" element={<Contact />} />
                     {/* Ajoutez d'autres routes ici si nécessaire */}
                 </Routes>
             </div>

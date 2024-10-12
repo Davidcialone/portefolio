@@ -44,16 +44,16 @@ export function Project1() {
         <Box display="flex" flexDirection={flexDirection} alignItems="center">
           {/* Colonne de l'image */}
           <Box flex="1" display="flex" justifyContent="center">
-            <img 
-              src="portefolio/images/Paris.png"
-              alt="Projet 3"
-              className="project-image"
-              style={{
-                maxWidth: '70%',  // Limite la largeur de l'image à 80% de son conteneur
-                height: 'auto',    // Garde le ratio de l'image
-                margin: '0 auto',  // Centre l'image horizontalement
-              }}
-            />
+          <video
+              src="/portefolio/images/video New York.mp4" // Assurez-vous que le chemin de la vidéo est correct
+              controls 
+              autoPlay
+              loop
+              muted
+              style={{ width: '90%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }}
+            >
+              Votre navigateur ne supporte pas les vidéos.
+            </video>
           </Box>
 
           {/* Colonne de texte */}

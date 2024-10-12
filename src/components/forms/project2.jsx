@@ -12,6 +12,8 @@ import {
   SimpleGrid,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
+import { Button } from '@chakra-ui/react';
 
 export function Project2() {
   // Utiliser un breakpoint pour changer la disposition selon la taille de l'écran
@@ -26,6 +28,14 @@ export function Project2() {
     <Card>
       <CardHeader>
         <Heading size='md'>Projet 2</Heading>
+        <Text pt='2' fontSize='md'>
+          En cours de développement
+          <Link to="" target="_blank" rel="noopener noreferrer">
+            <Button variant="ghost" style={{ border: "1px solid", marginLeft:"1rem", backgroundColor:"ButtonShadow" }}>
+              Bientôt disponible
+            </Button>
+          </Link>
+        </Text>
       </CardHeader>
 
       <CardBody>
@@ -34,7 +44,7 @@ export function Project2() {
           {/* Colonne de la vidéo */}
           <Box flex="1">
           <img
-                  src="portefolio/images/Rome.png"
+                  src="portefolio/images/workinprogress.jpg"
                   alt="Projet 3"
                   className="project-image"
                   style={{

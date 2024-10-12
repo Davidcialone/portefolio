@@ -3,7 +3,7 @@ import { NavbarSite } from './navbar';
 import {Description} from './description';
 import {Skills} from './skills';
 import {MyBrand} from './brand';
-import { Contact } from './contact';
+import {ContactFooter} from './contactFooter';
 import { Grid, GridItem, Box, Heading, Stack } from '@chakra-ui/react';
 
 
@@ -63,7 +63,7 @@ function HomePage() {
       <GridItem boxShadow="0 4px 20px rgba(0, 0, 0, 0.5)"bg={bgColor} area={'footer'}>
       <Box bg="white" p={4} shadow="lg" borderRadius="md" margin={2}>
       <Heading size="md">Contact</Heading>
-        <Contact/>
+        <ContactFooter/>
         </Box>
       </GridItem>
     </Grid>
