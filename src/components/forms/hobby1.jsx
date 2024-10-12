@@ -26,7 +26,7 @@ export function Hobby1() {
       <CardHeader>
         <Heading size='md'>Le sport</Heading>
         <Text pt='2' fontSize='md'>
-         Un esprit sain dans un corps sain
+         "Un esprit sain dans un corps sain"
         </Text>
       </CardHeader>
 
@@ -35,7 +35,7 @@ export function Hobby1() {
           {/* Colonne de l'image */}
           <Box flex="1" display="flex" justifyContent="center">
             <img 
-              src="portefolio/images/Paris.png"
+              src="portefolio/images/sports.jpg"
               alt="Projet 3"
               className="project-image"
               style={{
@@ -47,35 +47,32 @@ export function Hobby1() {
           </Box>
 
           {/* Colonne de texte */}
-          <Box flex="1">
+          <Box paddingTop="2rem" flex="1">
             <Stack divider={<StackDivider />} spacing='4'>
-              <Box padding='2rem'>
+              <Box>
                 <Heading size='xs' textTransform='uppercase'>
-                  Stack technique
+                  Volley ball
                 </Heading>
                 <Text pt='2' fontSize='sm'>
-                  Front :
-                </Text>
-                <Text pt='2' fontSize='sm'>
-                  Back :
+                  Sport collectif , ma passion
                 </Text>
               </Box>
 
               <Box>
                 <Heading size='xs' textTransform='uppercase'>
-                  Contexte
+                  Fitness
                 </Heading>
                 <Text pt='2' fontSize='sm'>
-                  Projet de fin de formation ...
+                  Pour garder la forme
                 </Text>
               </Box>
 
               <Box>
                 <Heading size='xs' textTransform='uppercase'>
-                  Feedback
+                  Running
                 </Heading>
                 <Text pt='2' fontSize='sm'>
-                  Expérience très enrichissante, 1er projet ...
+                  Pour être en harmonie avec la nature
                 </Text>
               </Box>
             </Stack>

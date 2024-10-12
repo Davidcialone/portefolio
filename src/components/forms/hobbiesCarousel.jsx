@@ -7,6 +7,7 @@ import { NavbarSite } from './navbar';
 import { Box, IconButton } from '@chakra-ui/react';
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import { Hobby1 } from './hobby1'; // Importation du hobby
+import { Hobby2 } from './hobby2'; // Importation du hobby
 
 // Custom arrow components
 const NextArrow = ({ onClick }) => {
@@ -59,6 +60,9 @@ export function HobbiesCarousel() {
         <Slider {...settings}>
           <Box padding={4}>
             <Hobby1 /> {/* N'affiche qu'une seule fois le Hobby1 */}
+          </Box>
+          <Box padding={4}>
+            <Hobby2 /> {/* N'affiche qu'une seule fois le Hobby2 */}
           </Box>
         </Slider>
       </Box>
