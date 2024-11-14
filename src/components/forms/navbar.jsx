@@ -20,25 +20,27 @@ export function NavbarSite() {
   const bg = useColorModeValue("white", "gray.800");
   const mobileNav = useDisclosure();
 
-// Créer une constante pour les styles des boutons
-const buttonStyles = {
-  // variant: "ghost",
-  border: "2px solid",
-  borderColor: "black.500",
-  boxShadow: "lg",
-  bg: "rgba(255, 255, 255, 0.8)", // Fond semi-transparent
-  fontSize: "2xl", // Agrandir le texte
-  fontWeight: "bold", // Rendre le texte plus épais
-  transition: "transform 0.2s ease-in-out", // Transition pour un effet de zoom fluide
-  _hover: {
-    bg: "rgba(255, 255, 255, 0.9)",
-    boxShadow: "xl",
-    transform: "scale(1.30)", // Zoom de 5% lors du hover
-  },
-  _focus: {
-    boxShadow: "outline",
-  },
-};
+  const buttonStyles = {
+    border: "2px solid",
+    borderColor: "black.500",
+    boxShadow: "lg",
+    bg: "rgba(255, 255, 255, 0.8)",
+    fontWeight: "bold",
+    transition: "transform 0.2s ease-in-out",
+    fontSize: { base: "md", md: "lg", lg: "xl" }, // Ajustement de la taille du texte selon la taille d'écran
+    padding: { base: "1", md: "2" },              // Espacement interne ajusté par taille d’écran
+    width: { base: "6rem", md: "8rem", lg: "10rem" }, // Largeur du bouton par taille d’écran
+    height: { base: "1rem", md: "2rem", lg: "3rem" },   // Hauteur du bouton par taille d’écran
+    _hover: {
+      bg: "rgba(255, 255, 255, 0.9)",
+      boxShadow: "xl",
+      transform: "scale(1.05)", // Ajustement de l'effet de zoom
+    },
+    _focus: {
+      boxShadow: "outline",
+    },
+  };
+  
 
 const backgroundColor = '#DFF2FF';
 
@@ -57,13 +59,16 @@ return (
             <VisuallyHidden>Choc</VisuallyHidden>
           </chakra.a>
          
-            <chakra.h1 fontSize="5xl" color={'black'} fontWeight="bold" padding={4} ml="5">
+            <chakra.h1 fontSize="4xl" color={'black'} fontWeight="bold" padding={4} ml="5">
+              <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
               David CIALONE
+              </Link>
             </chakra.h1>
            
         </Flex>
         <HStack display="flex" alignItems="center" spacing={4}> {/* Plus d'espacement entre les boutons */}
           <HStack
+          width="{{80%}}"
             spacing={6} // Plus d'espacement entre chaque bouton
             mr={5}
             color="brand.500"
@@ -73,9 +78,9 @@ return (
             }}
           >
             {/* Application des styles buttonStyles */}
-            <Link to="/">
+            {/* <Link to="/">
               <Button {...buttonStyles}>Accueil</Button>
-            </Link>
+            </Link> */}
             <Link to="/portefolio/projects">
               <Button {...buttonStyles}>Projets</Button>
             </Link>
@@ -93,7 +98,7 @@ return (
             <IconButton
               display={{ base: "flex", md: "none" }}
               aria-label="Open menu"
-              fontSize="20px"
+              fontSize="2rem"
               color="gray.800"
               _dark={{ color: "inherit" }}
               variant="ghost"
@@ -119,16 +124,16 @@ return (
               <CloseButton aria-label="Close menu" onClick={mobileNav.onClose} />
 
               {/* Menu mobile avec les mêmes styles */}
-              <Link to="/projects">
+              <Link to="/portefolio/projects">
                 <Button w="full" {...buttonStyles}>Projets</Button>
               </Link>
-              <Link to="/hobbies">
+              <Link to="/portefolio/hobbies">
                 <Button w="full" {...buttonStyles}>Passions</Button>
               </Link>
               <Link to="https://www.linkedin.com/in/votre-profil-linkedin" target="_blank">
                 <Button w="full" {...buttonStyles}>Linkedin</Button>
               </Link>
-              <Link to="/contact">
+              <Link to="/portefolio/contact">
                 <Button w="full" {...buttonStyles}>Contact</Button>
               </Link>
             </VStack>

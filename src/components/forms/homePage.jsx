@@ -12,19 +12,24 @@ function HomePage() {
     <Grid
     templateAreas={{
       base: `
-        "header header header header" 
+      "header header header header" 
       "nav nav nav nav"
       "main main main main" 
       "footer footer footer footer"`, 
+      sm: `
+      "header header header header"
+      "nav nav nav nav"
+      "main main main main"
+      "footer footer footer footer"`,
       md: `
       "header header header header" 
       "nav nav nav nav"
       "main main main main" 
       "footer footer footer footer"`,  
       lg: `
-      "header header"
-      "nav main"
-      "footer footer"`, 
+      "header header header header"
+      "nav main main main"
+      "footer footer footer footer"`, 
         }}
     gridTemplateRows="auto 1fr auto" // Pour toutes les tailles d'écran (à moins d'être redéfini dans un point de rupture)
     gridTemplateColumns={{
@@ -47,8 +52,7 @@ function HomePage() {
       {/* Sidebar (Brand or Nav) */}
       <GridItem boxShadow="0 4px 20px rgba(0, 0, 0, 0.5)" bg={bgColor} area={'nav'}>
         <Box bg="white" p={4} shadow="lg" borderRadius="md" margin={2}>
-          <Heading size="md">DAVID CIALONE</Heading>
-          <MyBrand />
+            <MyBrand />
         </Box>
       </GridItem>
 
