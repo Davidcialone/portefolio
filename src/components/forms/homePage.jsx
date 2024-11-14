@@ -1,30 +1,42 @@
 import React from 'react';
 import { NavbarSite } from './navbar';
-import {Description} from './description';
-import {Skills} from './skills';
-import {MyBrand} from './brand';
-import {ContactFooter} from './contactFooter';
+import { Description } from './description';
+import { Skills } from './skills';
+import { MyBrand } from './brand';
+import { ContactFooter } from './contactFooter';
 import { Grid, GridItem, Box, Heading, Stack } from '@chakra-ui/react';
-
 
 function HomePage() {
   const bgColor = "gray.100";
   return (
     <Grid
-      templateAreas={`
-        "header header"
-        "nav main"
-        "nav footer"
-      `}
-      gridTemplateRows={'auto 1fr auto'} // Header and footer adjust to content, main takes remaining space
-      gridTemplateColumns={'12rem 1fr'}  // 12rem for sidebar nav, 1fr for main content
-      gap="4"
-      color="blackAlpha.700"
-      fontWeight="bold"
+    templateAreas={{
+      base: `
+        "header header header header" 
+      "nav nav nav nav"
+      "main main main main" 
+      "footer footer footer footer"`, 
+      md: `
+      "header header header header" 
+      "nav nav nav nav"
+      "main main main main" 
+      "footer footer footer footer"`,  
+      lg: `
+      "header header"
+      "nav main"
+      "footer footer"`, 
+        }}
+    gridTemplateRows="auto 1fr auto" // Pour toutes les tailles d'écran (à moins d'être redéfini dans un point de rupture)
+    gridTemplateColumns={{
+      base: '1fr',  // Sur les petits écrans (jusqu'à 600px), la sidebar prend toute la largeur
+      sm: '1fr',    // Même comportement pour les écrans entre 600px et 768px
+      md: '12rem 1fr',  // Sur les écrans moyens (≥ 768px), la sidebar prend 12rem et le contenu 1fr
+      lg: '12rem 1fr',  // Sur les grands écrans (≥ 1024px), la sidebar prend 12rem et le contenu 1fr
+    }}
     >
       {/* Header */}
       <GridItem boxShadow="0 4px 20px rgba(0, 0, 0, 0.5)"
-        bg= {bgColor}
+        bg={bgColor}
         area={'header'}
       >
         <Box>
@@ -34,36 +46,34 @@ function HomePage() {
 
       {/* Sidebar (Brand or Nav) */}
       <GridItem boxShadow="0 4px 20px rgba(0, 0, 0, 0.5)" bg={bgColor} area={'nav'}>
-      <Box  bg="white" p={4} shadow="lg" borderRadius="md" margin={2}>
-          {/* Here you can put your brand or any navigation */}
+        <Box bg="white" p={4} shadow="lg" borderRadius="md" margin={2}>
           <Heading size="md">DAVID CIALONE</Heading>
-          <MyBrand/>
+          <MyBrand />
         </Box>
       </GridItem>
 
       {/* Main Content */}
-      <GridItem boxShadow="0 4px 20px rgba(0, 0, 0, 0.5)"bg={bgColor} area={'main'}>
+      <GridItem boxShadow="0 4px 20px rgba(0, 0, 0, 0.5)" bg={bgColor} area={'main'}>
         {/* Stack allows vertical stacking of elements with spacing */}
         <Stack spacing={8}>
           {/* Block 2: Description */}
-          <Box  bg="white" p={4} shadow="lg" borderRadius="md" margin={2}>
+          <Box bg="white" p={4} shadow="lg" borderRadius="md" margin={2}>
             <Heading size="lg">A propos de moi</Heading>
             <Description />  {/* Your description component */}
           </Box>
 
           {/* Block 3: Skills */}
           <Box bg="white" p={4} shadow="lg" borderRadius="md" margin={2}>
-            <Heading size="lg">Mes compétences</Heading>
             <Skills />  {/* Your skills component */}
           </Box>
         </Stack>
       </GridItem>
 
       {/* Footer */}
-      <GridItem boxShadow="0 4px 20px rgba(0, 0, 0, 0.5)"bg={bgColor} area={'footer'}>
-      <Box bg="white" p={4} shadow="lg" borderRadius="md" margin={2}>
-      <Heading size="md">Contact</Heading>
-        <ContactFooter/>
+      <GridItem boxShadow="0 4px 20px rgba(0, 0, 0, 0.5)" bg={bgColor} area={'footer'}>
+        <Box bg="white" p={4} shadow="lg" borderRadius="md" margin={2}>
+          <Heading size="md">Contact</Heading>
+          <ContactFooter />
         </Box>
       </GridItem>
     </Grid>
