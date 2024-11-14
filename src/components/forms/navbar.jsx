@@ -87,7 +87,7 @@ return (
             <Link to="/portefolio/hobbies">
               <Button {...buttonStyles}>Passions</Button>
             </Link>
-            <Link to="https://www.linkedin.com/in/votre-profil-linkedin" target="_blank">
+            <Link to="www.linkedin.com/in/david-cialone-6a5a627b" target="_blank">
               <Button {...buttonStyles}>Linkedin</Button>
             </Link>
             <Link to="/portefolio/contact">
@@ -130,7 +130,7 @@ return (
               <Link to="/portefolio/hobbies">
                 <Button w="full" {...buttonStyles}>Passions</Button>
               </Link>
-              <Link to="https://www.linkedin.com/in/votre-profil-linkedin" target="_blank">
+              <Link to="www.linkedin.com/in/david-cialone-6a5a627b" target="_blank">
                 <Button w="full" {...buttonStyles}>Linkedin</Button>
               </Link>
               <Link to="/portefolio/contact">
