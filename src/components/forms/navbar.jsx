@@ -104,6 +104,7 @@ return (
               variant="ghost"
               icon={<AiOutlineMenu />}
               onClick={mobileNav.onOpen}
+            
             />
 
             <VStack
@@ -120,6 +121,7 @@ return (
               spacing={3}
               rounded="sm"
               shadow="sm"
+              zIndex={20}
             >
               <CloseButton aria-label="Close menu" onClick={mobileNav.onClose} />
 
