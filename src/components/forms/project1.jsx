@@ -30,7 +30,7 @@ export function Project1() {
         <Heading size='md'>On The Road Again</Heading>
         <Text pt='2' fontSize='md'>
           L'application pour revivre ses voyages
-          <Link to="https://davidcialone.github.io/ontheroadagain/" target="_blank" rel="noopener noreferrer">
+          <Link to="https://ontheroadagain-client.vercel.app/" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" style={{ border: "1px solid", marginLeft:"1rem", backgroundColor:"ButtonShadow" }}>
               On The Road Again
             </Button>
@@ -64,7 +64,7 @@ export function Project1() {
                   Stack technique
                 </Heading>
                 <Text pt='2' fontSize='sm'>
-                  Front : React, Chakra UI
+                  Front : React, Material UI
                 </Text>
                 <Text pt='2' fontSize='sm'>
                   Back : Node.js, Express, Postgres
