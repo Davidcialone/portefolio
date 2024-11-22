@@ -21,7 +21,7 @@ export function NavbarSite() {
   const mobileNav = useDisclosure();
 
   const buttonStyles = {
-    border: "2px solid",
+    border:{ base: "1px solid", md: "2px solid", lg: "2px solid" },
     borderColor: "black.500",
     boxShadow: "lg",
     bg: "rgba(255, 255, 255, 0.8)",
@@ -30,7 +30,7 @@ export function NavbarSite() {
     fontSize: { base: "md", md: "lg", lg: "xl" }, // Ajustement de la taille du texte selon la taille d'écran
     padding: { base: "1", md: "2" },              // Espacement interne ajusté par taille d’écran
     width: { base: "6rem", md: "8rem", lg: "10rem" }, // Largeur du bouton par taille d’écran
-    height: { base: "1rem", md: "2rem", lg: "3rem" },   // Hauteur du bouton par taille d’écran
+    height: { base: "2rem", md: "2rem", lg: "3rem" },   // Hauteur du bouton par taille d’écran
     _hover: {
       bg: "rgba(255, 255, 255, 0.9)",
       boxShadow: "xl",
@@ -118,7 +118,7 @@ return (
               pb={4}
               m={2}
               bg={bg}
-              spacing={3}
+              spacing={6}
               rounded="sm"
               shadow="sm"
               zIndex={20}
