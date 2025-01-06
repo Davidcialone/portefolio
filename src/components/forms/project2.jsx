@@ -9,8 +9,8 @@ import {
   Card,
   CardHeader,
   CardBody,
-  SimpleGrid,
   useBreakpointValue,
+  border,
 } from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
 import { Button } from '@chakra-ui/react';
@@ -27,66 +27,74 @@ export function Project2() {
   return (
     <Card>
       <CardHeader>
-        <Heading size='md'>Projet 2</Heading>
+        <Heading size='md'>O Resto</Heading>
         <Text pt='2' fontSize='md'>
-          En cours de développement
-          <Link to="" target="_blank" rel="noopener noreferrer">
+          L'application pour gérer votre restaurant
+          <Link to="https://tiki-sigma.vercel.app/" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" style={{ border: "1px solid", marginLeft:"1rem", backgroundColor:"ButtonShadow" }}>
-              Bientôt disponible
+              O Resto pour les clients
             </Button>
           </Link>
+            {/* <Link to="https://tiki-ermployee.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <Button variant="ghost" style={{ border: "1px solid", marginLeft:"1rem", backgroundColor:"ButtonShadow" }}>
+              O Resto Front pour les employés
+            </Button>
+          </Link> */}
         </Text>
+                 
       </CardHeader>
 
       <CardBody>
-        {/* Utilisation de SimpleGrid pour créer deux colonnes sur les grands écrans */}
-        <Box display="flex" flexDirection={flexDirection} alignItems="center" spacing={10}>
-          {/* Colonne de la vidéo */}
+        <Box display="flex" flexDirection={flexDirection} alignItems="center">
+          {/* Colonne de l'image */}
+          <Box flex="1" display="flex" justifyContent="center">
+          <img src="public\images\Oresto.png" alt="O Resto" style={{ width: '90%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }} />
+            
+          </Box>
+
+          {/* Colonne de texte */}
           <Box flex="1">
-          <img
-                  src="/portefolio/images/workinprogress.jpg"
-                  alt="Projet 3"
-                  className="project-image"
-                  style={{
-                  maxWidth: '70%',  // Limite la largeur de l'image à 80% de son conteneur
-                  height: 'auto',    // Garde le ratio de l'image
-                  margin: '0 auto',  // Centre l'image horizontalement
-                }}
-              />
-            </Box>
-  
-            {/* Colonne de texte */}
-            <Box flex="1">
-              <Stack divider={<StackDivider />} spacing='4'>
-                <Box padding='2rem'>
-                  <Heading size='xs' textTransform='uppercase'>
-                    Stack technique
-                  </Heading>
-                  <Text pt='2' fontSize='sm'>
-                    Front :
-                  </Text>
-                  <Text pt='2' fontSize='sm'>
-                    Back :
-                  </Text>
-                </Box>
-
-              <Box>
+            <Stack divider={<StackDivider />} spacing='4'>
+              <Box paddingTop='2rem'>
                 <Heading size='xs' textTransform='uppercase'>
-                  Contexte
+                  Stack technique
                 </Heading>
                 <Text pt='2' fontSize='sm'>
-                  Projet de fin de formation ...
+                  Front : React, Tailwind
+                </Text>
+                <Text pt='2' fontSize='sm'>
+                  Back : Node.js, Express, Postgres
                 </Text>
               </Box>
 
               <Box>
-                <Heading size='xs' textTransform='uppercase'>
-                  Feedback
-                </Heading>
-                <Text pt='2' fontSize='sm'>
-                  Expérience très enrichissante, 1er projet ...
-                </Text>
-              </Box>
+  <Heading size='xs' textTransform='uppercase'>
+    Contexte
+  </Heading>
+  <Text pt='2' fontSize='sm'>  
+    Le restaurant où travaille mon fils n'a pas de site internet...  
+    <br /><br />  
+    À l'heure du numérique et de la digitalisation, il est important pour un restaurant de posséder un site internet.  
+    <br /><br />  
+    Les objectifs de ce projet étaient de créer une application permettant de mettre en avant le restaurant, de gérer les réservations et de consulter les menus.  
+</Text>  
+</Box>  
+
+<Box>  
+  <Heading size='xs' textTransform='uppercase'>  
+    Feedback du projet  
+  </Heading>  
+  <Text pt='2' fontSize='sm'>  
+    Ce projet a été une expérience enrichissante car il m'a permis de répondre à un besoin réel.  
+    <br /><br />  
+    J'ai pu mettre en pratique mes compétences en développement web en créant une solution sur mesure pour le restaurant. Cela m'a également permis d'apprendre à mieux comprendre les besoins spécifiques d'une entreprise dans le domaine de la restauration, comme la gestion des réservations et la mise en valeur de son identité.  
+    <br /><br />  
+    De plus, ce projet m'a permis de perfectionner mes compétences techniques en travaillant sur l'optimisation de l'expérience utilisateur, la création d'une interface intuitive et l'intégration d'un système de réservation efficace.  
+    <br /><br />  
+    Enfin, cette réalisation a été une opportunité de collaborer avec les membres du restaurant pour recueillir leurs retours et ajuster le produit final, renforçant ainsi ma capacité à travailler sur des projets concrets et orientés client.  
+  </Text>  
+</Box>  
+
             </Stack>
           </Box>
         </Box>

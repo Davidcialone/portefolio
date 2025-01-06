@@ -1,148 +1,128 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  chakra, 
-  Flex, 
-  Button, 
-  HStack, 
-  Box, 
-  IconButton, 
-  VStack, 
-  CloseButton, 
-  VisuallyHidden, 
-  useDisclosure, 
-  useColorModeValue 
-} from '@chakra-ui/react'; // Ensure you're importing all Chakra components
-import { AiOutlineMenu } from 'react-icons/ai'; // Import necessary icon
-
+import {
+  chakra,
+  Flex,
+  Button,
+  HStack,
+  Box,
+  IconButton,
+  VStack,
+  CloseButton,
+  VisuallyHidden,
+  useDisclosure,
+  useColorModeValue,
+} from '@chakra-ui/react';
+import { AiOutlineMenu } from 'react-icons/ai';
 
 export function NavbarSite() {
-  const bg = useColorModeValue("white", "gray.800");
-  const mobileNav = useDisclosure();
-
-  const buttonStyles = {
-    border:{ base: "1px solid", md: "2px solid", lg: "2px solid" },
-    borderColor: "black.500",
-    boxShadow: "lg",
-    bg: "rgba(255, 255, 255, 0.8)",
-    fontWeight: "bold",
-    transition: "transform 0.2s ease-in-out",
-    fontSize: { base: "md", md: "lg", lg: "xl" }, // Ajustement de la taille du texte selon la taille d'écran
-    padding: { base: "1", md: "2" },              // Espacement interne ajusté par taille d’écran
-    width: { base: "6rem", md: "8rem", lg: "10rem" }, // Largeur du bouton par taille d’écran
-    height: { base: "2rem", md: "2rem", lg: "3rem" },   // Hauteur du bouton par taille d’écran
-    _hover: {
-      bg: "rgba(255, 255, 255, 0.9)",
-      boxShadow: "xl",
-      transform: "scale(1.05)", // Ajustement de l'effet de zoom
-    },
-    _focus: {
-      boxShadow: "outline",
-    },
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const bg = useColorModeValue('white', 'gray.800');
+  const navShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+  const linkHoverStyle = {
+    transform: 'scale(1.05)',
+    transition: 'all 0.2s ease-in-out',
+    textDecoration: 'none',
   };
-  
 
-const backgroundColor = '#DFF2FF';
+  const navLinks = [
+    { label: 'Projets', path: '/portefolio/projects' },
+    { label: 'Passions', path: '/portefolio/hobbies' },
+    { label: 'LinkedIn', path: 'https://www.linkedin.com/in/david-cialone-6a5a627b', isExternal: true },
+    { label: 'Contact', path: '/portefolio/contact' },
+  ];
 
-return (
-  <React.Fragment>
+  return (
     <chakra.header
       bg={bg}
+      shadow={navShadow}
       w="full"
-      padding={2}
-      borderRadius={8}
-      shadow="md"
+      position="sticky"
+      top={0}
+      zIndex="1000"
+      px={4}
+      py={2}
     >
-      <Flex alignItems="center" justifyContent="space-between" mx="auto" backgroundColor={backgroundColor}>
-        <Flex>
+      <Flex
+        alignItems="center"
+        justifyContent="space-between"
+        mx="auto"
+        maxW="1200px"
+      >
+        {/* Logo Section */}
+        <Flex alignItems="center">
           <chakra.a href="/" title="Home Page" display="flex" alignItems="center">
-            <VisuallyHidden>Choc</VisuallyHidden>
+            <VisuallyHidden>David Cialone</VisuallyHidden>
           </chakra.a>
-         
-            <chakra.h1 fontSize="4xl" color={'black'} fontWeight="bold" padding={4} ml="5">
-              <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-              David CIALONE
-              </Link>
-            </chakra.h1>
-           
+          <chakra.h1 fontSize="2xl" fontWeight="bold" ml="3" color="blue.600">
+            <Link to="/">David CIALONE</Link>
+          </chakra.h1>
         </Flex>
-        <HStack display="flex" alignItems="center" spacing={4}> {/* Plus d'espacement entre les boutons */}
-          <HStack
-          width="{{80%}}"
-            spacing={6} // Plus d'espacement entre chaque bouton
-            mr={5}
-            color="brand.500"
-            display={{
-              base: "none",
-              md: "inline-flex",
-            }}
-          >
-            {/* Application des styles buttonStyles */}
-            {/* <Link to="/">
-              <Button {...buttonStyles}>Accueil</Button>
-            </Link> */}
-            <Link to="/portefolio/projects">
-              <Button {...buttonStyles}>Projets</Button>
-            </Link>
-            <Link to="/portefolio/hobbies">
-              <Button {...buttonStyles}>Passions</Button>
-            </Link>
-            <Link to="www.linkedin.com/in/david-cialone-6a5a627b" target="_blank">
-              <Button {...buttonStyles}>Linkedin</Button>
-            </Link>
-            <Link to="/portefolio/contact">
-              <Button {...buttonStyles}>Contact</Button>
-            </Link>
-          </HStack>
-          <Box display={{ base: "inline-flex", md: "none" }}>
-            <IconButton
-              display={{ base: "flex", md: "none" }}
-              aria-label="Open menu"
-              fontSize="2rem"
-              color="gray.800"
-              _dark={{ color: "inherit" }}
-              variant="ghost"
-              icon={<AiOutlineMenu />}
-              onClick={mobileNav.onOpen}
-            
-            />
 
-            <VStack
-              pos="absolute"
-              top={0}
-              left={0}
-              right={0}
-              display={mobileNav.isOpen ? "flex" : "none"}
-              flexDirection="column"
-              p={2}
-              pb={4}
-              m={2}
-              bg={bg}
-              spacing={6}
-              rounded="sm"
-              shadow="sm"
-              zIndex={20}
+        {/* Desktop Menu */}
+        <HStack
+          spacing={8}
+          display={{ base: 'none', md: 'flex' }}
+          alignItems="center"
+        >
+          {navLinks.map((link) => (
+            <chakra.a
+              href={link.path}
+              key={link.label}
+              isExternal={link.isExternal}
+              fontSize="lg"
+              color={useColorModeValue('gray.600', 'gray.200')}
+              fontWeight="medium"
+              _hover={linkHoverStyle}
             >
-              <CloseButton aria-label="Close menu" onClick={mobileNav.onClose} />
-
-              {/* Menu mobile avec les mêmes styles */}
-              <Link to="/portefolio/projects">
-                <Button w="full" {...buttonStyles}>Projets</Button>
-              </Link>
-              <Link to="/portefolio/hobbies">
-                <Button w="full" {...buttonStyles}>Passions</Button>
-              </Link>
-              <Link to="www.linkedin.com/in/david-cialone-6a5a627b" target="_blank">
-                <Button w="full" {...buttonStyles}>Linkedin</Button>
-              </Link>
-              <Link to="/portefolio/contact">
-                <Button w="full" {...buttonStyles}>Contact</Button>
-              </Link>
-            </VStack>
-          </Box>
+              {link.label}
+            </chakra.a>
+          ))}
         </HStack>
+
+        {/* Mobile Menu Button */}
+        <Box display={{ base: 'inline-flex', md: 'none' }}>
+          <IconButton
+            aria-label="Open Menu"
+            icon={<AiOutlineMenu />}
+            onClick={onOpen}
+            fontSize="2xl"
+            variant="ghost"
+            colorScheme="blue"
+          />
+        </Box>
       </Flex>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <VStack
+          pos="absolute"
+          top={0}
+          left={0}
+          w="full"
+          bg={bg}
+          spacing={4}
+          p={4}
+          zIndex={20}
+          shadow={navShadow}
+        >
+          <CloseButton aria-label="Close Menu" onClick={onClose} alignSelf="flex-end" />
+          {navLinks.map((link) => (
+            <Button
+              as={link.isExternal ? 'a' : Link}
+              href={link.path}
+              key={link.label}
+              w="full"
+              colorScheme="blue"
+              variant="ghost"
+              _hover={linkHoverStyle}
+              onClick={onClose}
+            >
+              {link.label}
+            </Button>
+          ))}
+        </VStack>
+      )}
     </chakra.header>
-  </React.Fragment>
-);
+  );
 }

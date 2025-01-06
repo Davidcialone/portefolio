@@ -4,81 +4,75 @@ import { Description } from './description';
 import { Skills } from './skills';
 import { MyBrand } from './brand';
 import { ContactFooter } from './contactFooter';
-import { Grid, GridItem, Box, Heading, Stack } from '@chakra-ui/react';
+import { Grid, GridItem, Box, Heading, Stack, useColorModeValue } from '@chakra-ui/react';
 
 function HomePage() {
-  const bgColor = "gray.100";
+  const bgColor = useColorModeValue('gray.50', 'gray.800'); // S'adapte au mode clair/sombre
+  const cardBg = useColorModeValue('white', 'gray.700');
+  const shadowEffect = "0 8px 20px rgba(0, 0, 0, 0.1)";
+
   return (
     <Grid
-    templateAreas={{
-      base: `
-      "header header header header" 
-      "nav nav nav nav"
-      "main main main main" 
-      "footer footer footer footer"`, 
-      sm: `
-      "header header header header"
-      "nav nav nav nav"
-      "main main main main"
-      "footer footer footer footer"`,
-      md: `
-      "header header header header" 
-      "nav nav nav nav"
-      "main main main main" 
-      "footer footer footer footer"`,  
-      lg: `
-      "header header header header"
-      "nav main main main"
-      "footer footer footer footer"`, 
-        }}
-    gridTemplateRows="auto 1fr auto" // Pour toutes les tailles d'écran (à moins d'être redéfini dans un point de rupture)
-    gridTemplateColumns={{
-      base: '1fr',  // Sur les petits écrans (jusqu'à 600px), la sidebar prend toute la largeur
-      sm: '1fr',    // Même comportement pour les écrans entre 600px et 768px
-      md: '12rem 1fr',  // Sur les écrans moyens (≥ 768px), la sidebar prend 12rem et le contenu 1fr
-      lg: '12rem 1fr',  // Sur les grands écrans (≥ 1024px), la sidebar prend 12rem et le contenu 1fr
-    }}
+      templateAreas={{
+        base: `
+          "header"
+          "main"
+          "footer"`,
+        md: `
+          "header"
+          "main"
+          "footer"`,
+        lg: `
+          "header header"
+          "nav main"
+          "footer footer"`,
+      }}
+      gridTemplateRows="auto 1fr auto"
+      gridTemplateColumns={{
+        base: '1fr',
+        lg: '15rem 1fr',
+      }}
+      minH="100vh"
+      bg={bgColor}
     >
       {/* Header */}
-      <GridItem boxShadow="0 4px 20px rgba(0, 0, 0, 0.5)"
-        bg={bgColor}
-        area={'header'}
-      >
-        <Box>
-          <NavbarSite /> {/* Navbar will adapt to the GridItem size */}
-        </Box>
+      <GridItem area="header" boxShadow={shadowEffect} zIndex="1000">
+        <NavbarSite />
       </GridItem>
 
-      {/* Sidebar (Brand or Nav) */}
-      <GridItem boxShadow="0 4px 20px rgba(0, 0, 0, 0.5)" bg={bgColor} area={'nav'}>
-        <Box bg="white" p={2} shadow="lg" borderRadius="md" >
-          <MyBrand />
-        </Box>
+      {/* Sidebar */}
+      <GridItem
+        area="nav"
+        display={{ base: 'none', lg: 'block' }}
+        bg={cardBg}
+        p={4}
+        shadow={shadowEffect}
+        borderRadius="lg"
+      >
+        <MyBrand />
       </GridItem>
 
       {/* Main Content */}
-      <GridItem boxShadow="0 4px 20px rgba(0, 0, 0, 0.5)" bg={bgColor} area={'main'}>
-        {/* Stack allows vertical stacking of elements with spacing */}
-        <Stack spacing={8}>
-          {/* Block 2: Description */}
-          <Box bg="white" p={2} shadow="lg" borderRadius="md" margin={2}>
-            <Heading size="lg">A propos de moi</Heading>
-            <Description />  {/* Your description component */}
+      <GridItem area="main" p={{ base: 4, lg: 8 }}>
+        <Stack spacing={6}>
+          {/* About Me */}
+          <Box bg={cardBg} p={6} shadow={shadowEffect} borderRadius="lg" _hover={{ transform: 'scale(1.02)', transition: 'all 0.3s' }}>
+            <Heading size="lg" mb={4}>À propos de moi</Heading>
+            <Description />
           </Box>
 
-          {/* Block 3: Skills */}
-          <Box bg="white" p={2} shadow="lg" borderRadius="md" margin={2}>
-            <Skills />  {/* Your skills component */}
+          {/* Skills */}
+          <Box bg={cardBg} p={6} shadow={shadowEffect} borderRadius="lg" _hover={{ transform: 'scale(1.02)', transition: 'all 0.3s' }}>
+            <Heading size="lg" mb={4}>Compétences</Heading>
+            <Skills />
           </Box>
         </Stack>
       </GridItem>
 
       {/* Footer */}
-      <GridItem boxShadow="0 4px 20px rgba(0, 0, 0, 0.5)" bg={bgColor} area={'footer'}>
-        <Box bg="white" p={2} shadow="lg" borderRadius="md" margin={2}>
-          <Heading size="md">Contact</Heading>
-          <ContactFooter />
-        </Box>
+      <GridItem area="footer" bg={cardBg} p={6} shadow={shadowEffect} borderRadius="lg" mt={6}>
+        <Heading size="md" mb={4}>Contact</Heading>
+        <ContactFooter />
       </GridItem>
     </Grid>
   );

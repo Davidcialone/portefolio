@@ -14,10 +14,11 @@ import {
 export function Skills() {
   return (
     <Box padding="4">
-      <Heading as="h3" size="lg" textAlign="center" marginBottom="4">
+      {/* <Heading as="h3" size="lg" textAlign="center" marginBottom="4">
         {/* Add a heading if necessary */}
-        Mes Compétences
-      </Heading>
+        {/* Mes Compétences */}
+      {/* </Heading> */} 
+
       <SimpleGrid columns={{ base: 1, md: 1, lg: 3 }} spacing="4">
         {/* Card 1 */}
         <Card border="2px solid" borderColor="gray.300" borderRadius="8px">
