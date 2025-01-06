@@ -2,6 +2,7 @@ import React from "react";
 import {
   Box,
   VStack,
+  HStack,
   Image,
   Text,
   Badge,
@@ -28,10 +29,13 @@ export function MyBrand() {
       transition="transform 0.3s"
       _hover={{ transform: "scale(1.03)" }}
     >
-      <VStack
-        spacing={6}
+      {/* Utilisation de VStack pour le mobile (photo au-dessus du texte) et HStack pour desktop (photo à gauche, texte à droite) */}
+      <Box
+        display="flex"
+        flexDirection={{ base: "column", md: "row" }} // Pour mobile, l'image est au-dessus du texte (colonne), sinon à gauche du texte (ligne)
         alignItems="center"
-        direction={{ base: "column", md: "row" }} // Photo au-dessus du texte pour mobile
+        justifyContent="center"
+        spacing={6}
       >
         {/* Image de profil */}
         <Image
@@ -45,6 +49,7 @@ export function MyBrand() {
           shadow="lg"
           transition="transform 0.2s ease-in-out"
           _hover={{ transform: "scale(1.1)", shadow: "xl" }}
+          mb={{ base: 4, md: 0 }} // Espace entre l'image et le texte sur mobile
         />
 
         {/* Texte descriptif */}
@@ -95,7 +100,7 @@ export function MyBrand() {
             </Text>
           </Tooltip>
         </VStack>
-      </VStack>
+      </Box>
     </Box>
   );
 }
