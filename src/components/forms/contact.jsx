@@ -11,12 +11,18 @@ import {
 } from "@chakra-ui/react";
 
 export function Contact() {
-  const bgColor = useColorModeValue("gray.50", "gray.800");
-  const textColor = useColorModeValue("gray.700", "gray.200");
-  const buttonHoverColor = useColorModeValue("blue.600", "blue.300");
+  // Nouvelle palette de couleurs
+  const colors = {
+    primary: useColorModeValue("teal.700", "teal.300"),
+    secondary: useColorModeValue("purple.500", "purple.300"),
+    background: useColorModeValue("gray.50", "gray.900"),
+    text: useColorModeValue("gray.800", "gray.100"),
+    border: useColorModeValue("teal.400", "teal.700"),
+    badge: useColorModeValue("teal.300", "teal.800"),
+  };
 
   return (
-    <Box bg={bgColor} minH="100vh" p={4}>
+    <Box bg={colors.background} minH="100vh" p={4}>
       {/* Navbar */}
       <NavbarSite />
 
@@ -29,12 +35,12 @@ export function Contact() {
         textAlign="center"
       >
         {/* Titre */}
-        <Heading as="h1" size="xl" color={textColor} mb={4}>
+        <Heading as="h1" size="xl" color={colors.primary} mb={4}>
           Contactez-moi
         </Heading>
 
         {/* Texte d'introduction */}
-        <Text fontSize="lg" lineHeight="1.8" color={textColor}>
+        <Text fontSize="lg" lineHeight="1.8" color={colors.text}>
           N'hésitez pas à me contacter pour discuter de vos projets ou pour toute question. Je suis toujours prêt à échanger et explorer de nouvelles opportunités.
         </Text>
 
@@ -49,8 +55,9 @@ export function Contact() {
             <Button
               size="lg"
               variant="solid"
-              colorScheme="linkedin"
-              _hover={{ bg: buttonHoverColor }}
+              bg={colors.primary}
+              color="white"
+              _hover={{ bg: useColorModeValue("teal.600", "teal.400") }}
             >
               Linkedin
             </Button>
@@ -61,8 +68,9 @@ export function Contact() {
             <Button
               size="lg"
               variant="solid"
-              colorScheme="teal"
-              _hover={{ bg: buttonHoverColor }}
+              bg={colors.secondary}
+              color="white"
+              _hover={{ bg: useColorModeValue("purple.600", "purple.400") }}
             >
               Email
             </Button>

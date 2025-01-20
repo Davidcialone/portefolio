@@ -16,21 +16,29 @@ import {
 import { AiOutlineMenu } from 'react-icons/ai';
 
 export function NavbarSite() {
-  const bg = useColorModeValue('white', 'gray.900'); // Fond clair ou foncé
-  const textColor = useColorModeValue('gray.800', 'white'); // Couleur du texte
-  const accentColor = useColorModeValue('blue.500', 'blue.300'); // Couleur des liens actifs
+  // Nouvelle palette de couleurs
+  const colors = {
+    primary: useColorModeValue("teal.700", "teal.300"),
+    secondary: useColorModeValue("purple.500", "purple.300"),
+    background: useColorModeValue("gray.50", "gray.900"),
+    text: useColorModeValue("gray.800", "gray.100"),
+    border: useColorModeValue("teal.400", "teal.700"),
+    badge: useColorModeValue("teal.300", "teal.800"),
+  };
+
   const mobileNav = useDisclosure();
 
+  // Styles des boutons avec la nouvelle palette
   const buttonStyles = {
     border: '2px solid',
-    borderColor: accentColor,
+    borderColor: colors.primary, // Utilisation de la couleur principale
     bg: 'transparent',
-    color: textColor,
+    color: colors.text, // Couleur du texte
     fontWeight: 'bold',
     fontSize: { base: 'sm', md: 'md', lg: 'lg' },
     padding: { base: 2, md: 3 },
     _hover: {
-      bg: accentColor,
+      bg: colors.primary, // Couleur principale au survol
       color: 'white',
       transform: 'scale(1.05)',
       boxShadow: 'lg',
@@ -42,15 +50,15 @@ export function NavbarSite() {
 
   return (
     <React.Fragment>
-      <chakra.header bg={bg} w="full" px={4} py={3} shadow="md">
+      <chakra.header bg={colors.background} w="full" px={4} py={3} shadow="md">
         <Flex alignItems="center" justifyContent="space-between" mx="auto" maxW="1200px">
           {/* Logo / Brand */}
           <Flex alignItems="center">
             <chakra.a href="/" display="flex" alignItems="center">
               <VisuallyHidden>Accueil</VisuallyHidden>
             </chakra.a>
-            <chakra.h1 fontSize="2xl" fontWeight="bold" color={textColor} ml={3}>
-              <Link to="/" style={{ textDecoration: 'none', color: textColor }}>
+            <chakra.h1 fontSize="2xl" fontWeight="bold" color={colors.text} ml={3}>
+              <Link to="/" style={{ textDecoration: 'none', color: colors.text }}>
                 David CIALONE
               </Link>
             </chakra.h1>
@@ -83,7 +91,7 @@ export function NavbarSite() {
               aria-label="Open menu"
               variant="ghost"
               fontSize="2xl"
-              color={textColor}
+              color={colors.text} // Couleur du texte
               onClick={mobileNav.onOpen}
             />
           </Box>
@@ -96,7 +104,7 @@ export function NavbarSite() {
             top={0}
             left={0}
             right={0}
-            bg={bg}
+            bg={colors.background} // Arrière-plan
             zIndex={10}
             shadow="lg"
             spacing={4}
